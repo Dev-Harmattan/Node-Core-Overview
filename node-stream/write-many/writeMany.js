@@ -8,7 +8,7 @@ import fs from 'node:fs/promises';
     let i = 0;
 
     const writeToStream = () => {
-      while (i < 1_000) {
+      while (i < 1_000_000) {
         const buffer = Buffer.from(` ${i} `, 'utf-8');
         if (!writeStream.write(buffer)) {
           break;
