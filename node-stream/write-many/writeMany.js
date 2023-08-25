@@ -8,12 +8,12 @@ import fs from 'node:fs/promises';
     let i = 0;
 
     const writeToStream = () => {
-      while (i < 1_000_000) {
+      while (i < 1_000_000_000) {
         const buffer = Buffer.from(` ${i} `, 'utf-8');
         if (!writeStream.write(buffer)) {
           break;
         }
-        if (i === 999999) writeStream.end(buffer);
+        if (i === 999999999) writeStream.end(buffer);
         i++;
       }
     };
@@ -28,6 +28,6 @@ import fs from 'node:fs/promises';
     });
   } catch (error) {
     console.log(error);
-    console.log('Error occoure.');
+    console.log('Error occurred.');
   }
 })();
